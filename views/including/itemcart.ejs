@@ -1,0 +1,32 @@
+<% if(cart.length==0) { for(ar of cart) {
+    let showcart=prods.find(e=> e.id == ar.id);
+//    var sum = showcart.price * ar.qty;
+   showcart.qty = ar.qty;
+   %>
+   <tr>
+       <th scope="row"><img src="<%=showcart.img %>" alt="" width="170em"></th>
+       <td>
+           <h5>
+               <%=showcart.title %>
+           </h5>
+           <li class="list-group-item"><strong>Tác giả: </strong>
+               <%=showcart.author %>
+           </li>
+           <li class="list-group-item"><strong>Thể loại: </strong>
+               <%=showcart.Category %>
+           </li>
+           <li class="list-group-item"><strong>Giá: </strong>
+               <%=showcart.price %>
+           </li>
+       </td>
+       <td>
+           <input aria-label="quantity" class="input-qty w-100" type="number"
+               value="<%=showcart.qty %>">
+
+       </td>
+       <td>
+           <%=showcart.price %>
+       </td>
+       <td><a href="" onclick="removeItem()"> Xóa</a></td>
+   </tr>
+   <% }} %>

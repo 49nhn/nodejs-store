@@ -1,0 +1,50 @@
+<script>
+      
+    cart1 = JSON.parse(decodeURIComponent(document.cookie.split("=")[1]));
+        
+    function addtocart(id) {
+        if (cart1.find(e => e.id == id)) {
+            cart1.find(e => e.id == id).qty++;
+        } else {
+            cart1.push({
+                id,
+                qty: 1
+            });
+        }
+        console.log(cart1);
+        document.cookie = "cart=" + encodeURIComponent(JSON.stringify(cart1));
+
+    }
+</script>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"
+    style="width: 50rem;">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Giỏ hàng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th colspan="2" scope="col" class="table-primary text-center" style="width: 40rem;">
+                        Sản Phẩm</th>
+                    <th scope="col" class="table-primary" style="width:5rem ;">Số lượng</th>
+                    <th scope="col" class="table-primary">Thành tiền</th>
+                    <th scope="col" class="table-primary"><a href="" onclick="removeAll()"> Xóa</a></th>
+                </tr>
+            </thead>
+            <tbody id="shopping-cart-show">
+                <!-- đây là nơi giỏ hàng -->
+              
+             
+            </tbody>
+        </table>
+        <div class="alert alert-primary text-end" role="alert"> <strong>
+                <!-- Tổng tiền -->
+  
+            </strong>
+            <span id="sum"></span>VND
+        </div>
+        <button class="btn btn-primary w-100" type="button">Đặt mua</button>
+    </div>
+</div>
