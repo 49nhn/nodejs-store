@@ -1,0 +1,67 @@
+<%- include('./including/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('./including/navigation.ejs') %>
+            <main>
+                <%- include('./including/sidebar.ejs') %>
+                    <% if (prods.length>0) {
+                        %>
+                        <% for (let product of prods ) {%>
+                            <div class="card col-sm-6 col-lg-4 mb-4 mb-lg-0 p-0 my-2" style="width:15rem;"
+                                id="card-book">
+                                <img src="<%=product.img %>" class="card-img-top" alt="...">
+                                <div class="card-body" style="height:7rem;">
+                                    <h5 class="card-title" style="height:4rem;">
+                                        <%=product.title %>
+                                    </h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item list-group-item-primary"><strong>Tác giả: </strong>
+                                        <%=product.author %>
+                                    </li>
+                                    <li class="list-group-item list-group-item-primary"><strong>Thể loại:</strong>
+                                        <%=product.Category %>
+                                    </li>
+                                    <li class="list-group-item list-group-item-primary"><strong>Giá: </strong>
+                                        <%=product.price %> VND
+                                    </li>
+                                </ul>
+                                <div class="card-body">
+
+                                    <button type="button" class="btn btn-outline-primary"
+                                        onclick="addtocart('<%=product.id %>')">Thêm giỏ hàng</button></a>
+                                    <form action="" method="POST">
+                                        <input type="hidden" name="id" value="<%= product.id %>">
+                                        <a href="/products/product-detail/<%= product.id%>" class="btn btn-outline-primary">Chi tiết</button></a>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <% } %>
+                                <% } else { %>
+                                    <h1>Product not found</h1>
+                                    <% } %>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <h3 class="text-bg-primary p-2 fs-5 my-2" style="border-radius:10px;">Review
+                                            sách mới
+                                        </h3>
+                                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3" id="postss">
+                                        </div>
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-end">
+
+                                                <a class="page-link" href="/blog.html">Xem tất cả</a>
+
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                        </div>
+                                        </section>
+
+                                        <%- include('./including/cart.ejs') %>
+                                            <%- include('./including/footer.ejs') %>
+            </main>
+            <%- include('./including/end.ejs') %>

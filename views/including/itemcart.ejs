@@ -1,0 +1,41 @@
+<% if(cart.length!=0) { for(ar of cart) { %>
+    <tr>
+        <th scope="row"><img src="<%=ar.img %>" alt="" width="170em"></th>
+        <td>
+            <h5>
+                <%=ar.title %>
+            </h5>
+            <li class="list-group-item"><strong>Tác giả: </strong>
+                <%=ar.author %>
+            </li>
+            <li class="list-group-item"><strong>Thể loại: </strong>
+                <%=ar.Category %>
+            </li>
+            <li class="list-group-item"><strong>Giá: </strong>
+                <%=ar.price %>
+            </li>
+        </td>
+        <td>
+
+            <select aria-label="quantity" class="input-qty w-100" type="" onchange="soluong(event,'<%=ar.id %>')">
+                <% for (let i=1; i <=10; i++) { if (i==ar.qty) { %>
+                    <option value="<%=i %>" selected>
+                        <%=i %>
+                    </option>
+                    <% } else { %>
+                        <option value="<%=i %>">
+                            <%=i %>
+                        </option>
+                        <%}} %>
+
+            </select>
+
+
+
+        </td>
+        <td class="itemTotal">
+            <%=ar.price*ar.qty %>
+        </td>
+        <td><button class="btn btn-primary" href="" onclick="removeItem('<%=ar.id %>')"> Xóa</button></td>
+    </tr>
+    <% }} %>

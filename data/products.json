@@ -1,0 +1,98 @@
+[
+  {
+    "id": "1",
+    "title": "Mind Map English Vocabulary - Từ Vựng Tiếng Anh Qua Sơ Đồ Tư Duy",
+    "author": "Hoàng Ngân",
+    "price": "119000",
+    "img": "/img/gallery/b1.jpg",
+    "Category": "Giáo dục"
+  },
+  {
+    "id": "2",
+    "title": "Cẩm Nang Nhi Khoa: Giải Quyết Nỗi Bất An Khi Chăm Sóc Trẻ Nhỏ",
+    "author": "Yasumi Morito",
+    "Category": "Giáo dục",
+    "price": 92000,
+    "img": "/img/gallery/b2.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Hồi Ký Người Thầy Xây Trường Hạnh Phúc",
+    "Category": "Giáo dục",
+    "author": "TS Nguyễn Văn Hòa",
+    "price": 118000,
+    "img": "/img/gallery/b3.jpg"
+  },
+  {
+    "id": "4",
+    "title": "Nhà Giả Kim (Tái Bản 2020)",
+    "Category": "Văn học",
+    "author": "Paulo Coelho",
+    "price": 79000,
+    "img": "/img/gallery/b4.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Tâm Lý Học - Phác Họa Chân Dung Kẻ Phạm Tội",
+    "Category": "Tâm lý",
+    "author": "Diệp Hồng Vũ",
+    "price": 145000,
+    "img": "/img/gallery/b5.jpg"
+  },
+  {
+    "id": "6",
+    "title": "Giải Thích Ngữ Pháp Tiếng Anh (Tái Bản 2022)",
+    "Category": "Giáo dục",
+    "author": "Mai Lan Hương",
+    "price": 220000,
+    "img": "/img/gallery/b6.jpg"
+  },
+  {
+    "id": "7",
+    "title": "Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)",
+    "Category": "Tâm lý",
+    "author": "Cao Minh",
+    "price": 117000,
+    "img": "/img/gallery/b7.jpg"
+  },
+  {
+    "id": "8",
+    "title": "[Combo Manga] Diệt Slime Suốt 300 Năm",
+    "Category": "Truyện Tranh",
+    "author": "Morita Kisetsu, Benio",
+    "price": 184000,
+    "img": "/img/gallery/b8.jpg"
+  },
+  {
+    "id": "9",
+    "title": "Sức Mạnh Tiềm Thức (Tái Bản 2021)",
+    "Category": "Tâm lý",
+    "author": "Joseph Murphyc",
+    "price": 104000,
+    "img": "/img/gallery/b9.jpg"
+  },
+  {
+    "id": "10",
+    "title": "Đánh Thức Con Người Phi Thường Trong Bạn (Tái Bản 2020)",
+    "Category": "Tâm lý",
+    "author": "Anthony Robbins",
+    "price": 168000,
+    "img": "/img/gallery/b10.jpg"
+  },
+  {
+    "id": "11",
+    "title": "Người Bán Hàng Vĩ Đại Nhất Thế Giới",
+    "Category": "Kinh tế",
+    "author": "Og Mandino",
+    "price": 148000,
+    "img": "/img/gallery/b11.jpg"
+  },
+  {
+    "id": "12",
+    "title": "Kỹ Năng Bán Hàng Tuyệt Đỉnh",
+    "Category": "Kinh tế",
+    "author": "Grant Cardone",
+    "price": 109000,
+    "img": "/img/gallery/b12.jpg"
+  }
+]

@@ -1,0 +1,110 @@
+<script>
+    console.log(document.cookie);
+    if (JSON.parse(decodeURIComponent(document.cookie.split("=")[1]))!=[]) {
+        cart1 = JSON.parse(decodeURIComponent(document.cookie.split("=")[1]));
+    } else {
+        cart1 = [];
+    }
+   
+
+    function sum() {
+        let sum = document.querySelector('#sum');
+        sum.innerHTML = 0;
+        document.querySelectorAll('.itemTotal').forEach(e => {
+            sum.innerHTML = parseInt(sum.innerHTML) + parseInt(e.innerHTML);
+        })
+    }
+    function addtocart(id) {
+        if (cart1.find(e => e.id == id)) {
+            cart1.find(e => e.id == id).qty++;
+        } else {
+            cart1.push({
+                id,
+                qty: 1
+            });
+        }
+        document.cookie = "cart=" + encodeURIComponent(JSON.stringify(cart1));
+        sum()
+        cartAmount()
+    }
+
+    async function updatecart(id, qty) {
+        if (cart1.find(e => e.id == id)) {
+            cart1.find(e => e.id == id).qty = parseInt(qty);
+        }
+        document.cookie = "cart=" + encodeURIComponent(JSON.stringify(cart1));
+        let data = await fetch('/cart').then(res => res.text())
+        document.querySelector('#shopping-cart-show').innerHTML = data;
+        sum()
+        cartAmount()
+    }
+    async function removeItem(id) {
+        cart1 = cart1.filter(e => e.id != id);
+        document.cookie = "cart=" + encodeURIComponent(JSON.stringify(cart1));
+        let data = await fetch('/cart').then(res => res.text())
+        document.querySelector('#shopping-cart-show').innerHTML = data;
+        sum()
+        cartAmount()
+    }
+    async function removeAll() {
+        cart1 = [];
+        document.cookie = "cart=" + encodeURIComponent(JSON.stringify(cart1));
+        let data = await fetch('/cart').then(res => res.text())
+        document.querySelector('#shopping-cart-show').innerHTML = data;
+        sum()
+        cartAmount()
+    }
+
+    function cartAmount() {
+        tongsoluong= document.querySelector('#cartAmount');
+        a=cart1.reduce((a, b) => a + b.qty, 0);
+        tongsoluong.innerHTML=a;
+    }
+</script>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"
+    style="width: 50rem;">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Giỏ hàng</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th colspan="2" scope="col" class="table-primary text-center" style="width: 40rem;">
+                        Sản Phẩm</th>
+                    <th scope="col" class="table-primary" style="width:5rem ;">Số lượng</th>
+                    <th scope="col" class="table-primary">Thành tiền</th>
+                    <th scope="col" class="table-primary"><button class="btn btn-primary" type="button" href=""
+                            onclick="removeAll()"> Xóa</button>
+                    </th>
+                </tr>
+            </thead>
+            <script>
+                function soluong(e, id) {
+                    updatecart(id, e.target.value);
+                }
+            </script>
+            <tbody id="shopping-cart-show">
+                <!-- đây là nơi giỏ hàng -->
+
+            </tbody>
+
+        </table>
+        <div class="alert alert-primary text-end" role="alert"> <strong>
+                <!-- Tổng tiền -->
+
+            </strong>
+            <span id="sum">0</span>VND
+        </div>
+        <button class="btn btn-primary w-100" type="button">Đặt mua</button>
+    </div>
+</div>
+<script>
+    let offcanvas = document.querySelector('#offcanvas');
+    offcanvas.addEventListener('click', async function () {
+        let data = await fetch('/cart').then(res => res.text())
+        document.querySelector('#shopping-cart-show').innerHTML = data;
+        sum()
+    })
+</script>

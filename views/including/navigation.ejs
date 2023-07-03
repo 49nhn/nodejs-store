@@ -1,0 +1,58 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light py-3 fixed-top bg-light"
+    data-navbar-on-scroll="data-navbar-on-scroll" aria-label="Site menu">
+    <div class="container"><a class="navbar-brand d-flex align-items-center fw-semi-bold fs-3" href="/">
+        <img class="me-3" src="/img/gallery/logo.png" alt="" />
+        <div class="text-primary font-base">booklover.com</div>
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
+          <li class="nav-item"><a class="nav-link fw-medium active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/admin/add-product">Quản lí sản phẩm</a></li>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">More</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+              <li><a class="dropdown-item" href="#">Đăng kí </a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="ps-lg-5">
+          <button class="btn btn-primary position-relative" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" id="offcanvas">
+
+            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+            <span id="cartAmount" class="cartAmount">
+              0
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </nav>
+  <div class="container py-5" id="home">
+    <div class="row align-items-center min-vh-md-75 ">
+      <div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
+        <h1 class="mt-6 mb-sm-4 display-4 fw-semi-bold lh-sm fs-4 fs-lg-6 fs-xxl-7">Thay đổi hôm nay, <br
+            class="d-block d-lg-none d-xl-block" />để mai đổi mới!</h1>
+        <p class="mb-4 fs-2">"Lý tưởng là cuốn sách không có trật tự gì cả và người đọc phải tự khám phá ra cho
+          mình"
+        </p>
+        <div class="pt-3">
+          <form>
+            <div class="input-group w-xl-75 w-xxl-50 d-flex flex-end-center">
+              <input class="form-control rounded-pill border font-base" id="formGroupExampleInput" type="text"
+                placeholder="Tìm sách, tác giả, từ khóa......" /><img class="input-box-icon me-3 ms-4"
+                src="/img/illustrations/search.png" width="30" alt="" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

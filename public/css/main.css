@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  color: aliceblue;
+}
+
+.cart {
+  position: relative;
+  background-color: rgb(36, 74, 197);
+  color: #eceff3;
+  font-size: 30px;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.cartAmount {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  font-size: 16px;
+  background-color: red;
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+}
+#home {
+  background-image: url("./img/illustrations/hero-bg.png");
+  background-position: right bottom;
+  background-size: cover;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  color: aliceblue;
+}
+
+.cart {
+  position: relative;
+  background-color: rgb(36, 74, 197);
+  color: #eceff3;
+  font-size: 30px;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.cartAmount {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  font-size: 16px;
+  background-color: red;
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+}
+#home {
+  background-image: url("../img/illustrations/hero-section.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

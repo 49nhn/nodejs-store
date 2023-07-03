@@ -1,0 +1,40 @@
+<%- include('../including/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../including/navigation.ejs') %>
+            <main class="container mx-auto">
+                <!-- content here -->
+                <div class="row">
+                    <h1 class="text-center text-bg-primary p-2 fs-5 my-2" style="border-radius:10px;">
+                        <%=product.title %>
+                    </h1>
+                    <div class="col-6">
+                        <img src=" <%=product.img %>" alt="">
+
+
+
+
+                    </div>
+                    <div class="col-6">
+                        <h2 class="text-center">
+                            <%=product.title %>
+                        </h2>
+                        <div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item list-group-item-primary"><strong>Tác giả: </strong>
+                                    <%=product.author %>
+                                </li>
+                                <li class="list-group-item list-group-item-primary"><strong>Thể loại:</strong>
+                                    <%=product.Category %>
+                                </li>
+                                <li class="list-group-item list-group-item-primary"><strong>Giá: </strong>
+                                    <%=product.price %> VND
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <%- include('../including/footer.ejs') %>
+                <%- include('../including/end.ejs') %>

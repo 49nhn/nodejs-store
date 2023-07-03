@@ -1,0 +1,72 @@
+<%- include('./including/head.ejs') %>
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+    <!-- Or for RTL support -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.rtl.min.css" />
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    </head>
+
+    <body>
+        <%- include('./including/navigation.ejs') %>
+            <!-- content -->
+            <main>
+                <div class="container mx-auto">
+                    <h2>Edit Product <%= id %>
+                    </h2>
+                    <% book=prods.find(({ id })=> id == id); %>
+                        <form action="/admin/edit-product/" method="post">
+                            <div class="d-none">
+                                <input type="text" name="id" value="<%= book.id %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" id="title" name="title"
+                                    value="<%= book.title %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="author">Author</label>
+                                <input type="text" class="form-control" id="author" name="author"
+                                    value="<%= book.author %>">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="Category">Category</label><br>
+                                <select class="form-select" id="Category" name="Category"
+                                    data-placeholder="Choose one thing">
+                                    <option value="">......</option>
+                                    <option value="Văn học">Văn học</option>
+                                    <option value="Tâm lý">Tâm lý</option>
+                                    <option value="Kinh tế">Kinh tế</option>
+                                    <option value="Giáo dục">Giáo dục</option>
+                                    <option value="Truyện Tranh">Truyện Tranh</option>
+                                </select>
+                                <script>
+                                    $('#Category').select2({
+                                        theme: "bootstrap-5",
+                                        width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
+                                        placeholder: $(this).data('placeholder'),
+                                    });
+                                </script>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="number" class="form-control" id="price" name="price"
+                                    value="<%= book.price %>">
+                            </div>
+                            <div class="form-group">
+                                <label for="img">Image</label>
+                                <input type="text" class="form-control" id="img" name="img" value="<%= book.img %>">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+
+                </div>
+            </main>
+            <%- include('./including/footer.ejs') %>
+                <%- include('./including/end.ejs') %>
